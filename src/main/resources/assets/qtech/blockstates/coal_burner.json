@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "qtech:block/coal_burner"
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "quilt_loader": {
+    "group": "gay.pyrrha",
+    "id": "qtech",
+    "version": "$version",
+
+    "intermediate_mappings": "net.fabricmc:intermediary",
+    "entrypoints": {
+      "init": "gay.pyrrha.qtech.QTech",
+      "client_init": "gay.pyrrha.qtech.client.QTechClient"
+    },
+
+    "metadata": {
+      "name": "QTech",
+      "description": "Modern tech with a mythical twist.",
+      "contributors": {
+        "JustPyrrha": "Owner"
+      },
+      "contact": {
+        "sources": "https://github.com/"
+      },
+      "license": {
+        "name": "GNU General Public License v3.0 or later",
+        "id": "GPL-3.0-or-later",
+        "url": "https://www.gnu.org/licenses/gpl-3.0-standalone.html"
+      }
+    },
+    "depends": [
+      {
+        "id": "minecraft",
+        "version": ">=1.19"
+      }
+    ]
+  },
+  "access_widener": "qtech.aw"
+}

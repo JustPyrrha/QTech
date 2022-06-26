@@ -1,0 +1,24 @@
+version: 2
+updates:
+  - directory: /
+    schedule:
+      interval: daily
+    package-ecosystem: gradle
+    labels:
+      - "build: deps"
+    assignees:
+      - JustPyrrha
+    reviewers:
+      - JustPyrrha
+    ignore:
+      - dependency-name: "com.mojang:minecraft"
+  - directory: /.github/workflows
+    package-ecosystem: github-actions
+    schedule:
+      interval: daily
+    labels:
+      - "build: actions"
+    assignees:
+      - JustPyrrha
+    reviewers:
+      - JustPyrrha
