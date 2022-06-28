@@ -15,7 +15,7 @@ if (System.getenv().containsKey("GITHUB_RUN_NUMBER")) {
 }
 
 group = "gay.pyrrha"
-version = "0.0.0-beta+build.${buildNumber}-mc.1.19"
+version = "0.0.0-beta+1.19-b.${buildNumber}"
 base.archivesName.set("QTech")
 
 repositories {
@@ -101,17 +101,14 @@ publishing {
         }
     }
     repositories {
-        if (project.version.toString().contains("+build.local")) {
+        if (project.version.toString().contains("-b.local")) {
             mavenLocal()
         } else {
-            val repoType = if (project.version.toString().contains("-beta") || project.version.toString()
-                            .contains("-alpha")
+            val repoType = if (project.version.toString().contains("-beta")
+                    || project.version.toString().contains("-alpha")
             ) "snapshots" else "releases"
             maven("https://repo.pyrrha.gay/repository/maven-$repoType/") {
-                credentials {
-                    username = System.getenv("NEXUS_USERNAME")
-                    password = System.getenv("NEXUS_PASSWORD")
-                }
+                credentials(PasswordCredentials::class)
             }
         }
     }
