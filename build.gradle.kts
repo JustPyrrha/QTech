@@ -5,7 +5,7 @@ plugins {
     id("org.quiltmc.loom") version "0.12.+"
     id("io.github.juuxel.loom-quiltflower") version "1.7.+"
     id("com.modrinth.minotaur") version "2.+"
-     id("org.cadixdev.licenser") version "0.6.+"
+    id("org.cadixdev.licenser") version "0.6.+"
     `maven-publish`
 }
 
@@ -64,9 +64,9 @@ java {
 modrinth {
     version = project.version
     versionType.set(
-        if (project.version.toString().contains("-alpha")) "alpha"
-        else if (project.version.toString().contains("-beta")) "beta"
-        else "release"
+            if (project.version.toString().contains("-alpha")) "alpha"
+            else if (project.version.toString().contains("-beta")) "beta"
+            else "release"
     )
 }
 
@@ -105,10 +105,13 @@ publishing {
             mavenLocal()
         } else {
             val repoType = if (project.version.toString().contains("-beta") || project.version.toString()
-                    .contains("-alpha")
+                            .contains("-alpha")
             ) "snapshots" else "releases"
             maven("https://repo.pyrrha.gay/repository/maven-$repoType/") {
-                credentials(PasswordCredentials::class)
+                credentials {
+                    username = System.getenv("NEXUS_USERNAME")
+                    password = System.getenv("NEXUS_PASSWORD")
+                }
             }
         }
     }

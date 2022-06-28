@@ -27,8 +27,8 @@ jobs:
       - name: Publish Maven Snapshot
         if: success()
         env:
-          ORG_GRADLE_PROJECT_mavenPassword: ${{ secrets.maven_pass }}
-          ORG_GRADLE_PROJECT_mavenUsername: ci
+          NEXUS_USERNAME: ci
+          NEXUS_PASSWORD: ${{ secrets.maven_pass }}
         run: ./gradlew publish
       - name: Upload Artifacts
         if: success()
