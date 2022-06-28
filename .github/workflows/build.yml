@@ -34,6 +34,8 @@ jobs:
         if: success()
         uses: actions/upload-artifact@v3
         with:
+          name: QTech
           path: |
             build/libs/QTech-*.jar
             !build/libs/QTech-*-sources.jar
+            !build/libs/QTech-*-javadoc.jar
