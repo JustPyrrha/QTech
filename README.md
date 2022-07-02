@@ -1,10 +1,11 @@
+<h1 style="display: flex; align-items: center; justify-content: center"><img src="src/main/resources/assets/qtech/icon.png" width="64" height="64" style="margin-right: 18px" alt="QTech Logo">QTech</h1>
+<p style="text-align: center"><strong>Modern tech with a mythical twist.</strong></p>
+
 ![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/JustPyrrha/QTech/build/main?logo=GitHub%20Actions&logoColor=white&style=flat-square)
 [![Maven metadata URL](https://img.shields.io/maven-metadata/v?logo=apache%20maven&metadataUrl=https%3A%2F%2Frepo.pyrrha.gay%2Frepository%2Fmaven%2Fgay%2Fpyrrha%2FQTech%2Fmaven-metadata.xml&style=flat-square)](https://repo.pyrrha.gay/#browse/browse:maven:gay%2Fpyrrha%2FQTech)
 ![GitHub repo size](https://img.shields.io/github/repo-size/JustPyrrha/QTech?logo=github&logoColor=white&style=flat-square)
 [![GitHub Sponsors](https://img.shields.io/github/sponsors/JustPyrrha?logo=github%20sponsors&logoColor=white&style=flat-square)](https://github.com/sponsors/JustPyrrha)
 
-# QTech
-Modern tech with a mythical twist.
 
 
 <!-- modrinth_exclude.start -->
