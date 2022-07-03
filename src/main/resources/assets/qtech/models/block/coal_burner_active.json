@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:block/orientable_with_bottom",
   "textures": {
-    "front": "qtech:block/coal_burner_front",
+    "front": "qtech:block/coal_burner_front_active",
     "side": "qtech:block/coal_burner_side",
     "top": "qtech:block/coal_burner_top",
     "bottom": "qtech:block/coal_burner_bottom"
