@@ -31,15 +31,14 @@ loom {
 }
 
 dependencies {
-    minecraft(libs.minecraft)
+    minecraft("com.mojang:minecraft:1.19")
     mappings(loom.layered {
-        addLayer(quiltMappings.mappings("${libs.quilt.mappings.get()}:v2"))
+        addLayer(quiltMappings.mappings("org.quiltmc:quilt-mappings:1.19+build.1:v2"))
     })
 
-    modImplementation(libs.quilt.loader)
-    modImplementation(libs.quilt.qsl)
+    modImplementation("org.quiltmc:quilt-loader:0.17.1-beta.4")
+    modImplementation("org.quiltmc:qsl:2.0.0-beta.9+1.19")
 }
-
 
 tasks.processResources {
     inputs.property("version", version)
