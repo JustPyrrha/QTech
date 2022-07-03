@@ -31,7 +31,7 @@ import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
 
 public class CoalBurnerBlockEntity extends LockableContainerBlockEntity {
-    private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(3, ItemStack.EMPTY);
+    private DefaultedList<ItemStack> inventory = DefaultedList.ofSize(3, ItemStack.EMPTY);
 
     public CoalBurnerBlockEntity(BlockPos blockPos, BlockState blockState) {
         super(ModBlockEntityTypes.COAL_BURNER, blockPos, blockState);
@@ -97,11 +97,13 @@ public class CoalBurnerBlockEntity extends LockableContainerBlockEntity {
     @Override
     public void readNbt(NbtCompound nbt) {
         super.readNbt(nbt);
+        this.inventory = DefaultedList.ofSize(this.size(), ItemStack.EMPTY);
         Inventories.readNbt(nbt, this.inventory);
     }
 
     @Override
     protected void writeNbt(NbtCompound nbt) {
         super.writeNbt(nbt);
+        Inventories.writeNbt(nbt, this.inventory);
     }
 }
