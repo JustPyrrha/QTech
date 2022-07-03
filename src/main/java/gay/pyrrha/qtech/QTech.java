@@ -19,6 +19,7 @@ package gay.pyrrha.qtech;
 
 import gay.pyrrha.qtech.block.ModBlocks;
 import gay.pyrrha.qtech.block.entity.ModBlockEntityTypes;
+import gay.pyrrha.qtech.item.ModItemTags;
 import gay.pyrrha.qtech.item.ModItems;
 import gay.pyrrha.qtech.screen.ModScreenHandlers;
 import org.quiltmc.loader.api.ModContainer;
@@ -36,6 +37,7 @@ public class QTech implements ModInitializer {
         logger.info("[QTech] Initializing...");
         modInstance = this;
 
+        ModItemTags.init();
         ModItems.init();
         ModBlocks.init();
         ModBlockEntityTypes.init();

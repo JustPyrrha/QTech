@@ -1,0 +1,12 @@
+{
+  "values": [
+    "qtech:common_energy_crystal",
+    "qtech:uncommon_energy_crystal",
+    "qtech:rare_energy_crystal",
+    "qtech:exquisite_energy_crystal",
+    "qtech:majestic_energy_crystal",
+    "qtech:uncrackable_rare_energy_crystal",
+    "qtech:uncrackable_exquisite_energy_crystal",
+    "qtech:uncrackable_majestic_energy_crystal"
+  ]
+}
