@@ -17,6 +17,7 @@
 
 package gay.pyrrha.qtech.screen;
 
+import gay.pyrrha.qtech.screen.slot.EnergyCrystalSlot;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventory;
@@ -24,9 +25,14 @@ import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.screen.slot.Slot;
+import net.minecraft.tag.ItemTags;
 
 public class CoalBurnerScreenHandler extends ScreenHandler {
     private final Inventory inventory;
+
+    private final Slot fuelSlot;
+    private final Slot crystalSlot;
+    private final Slot adapterSlot; //todo(JustPyrrha, 03/07/22): actually implement these lmao
 
     public CoalBurnerScreenHandler(int syncId, PlayerInventory playerInventory) {
         this(syncId, playerInventory, new SimpleInventory(3));
@@ -34,11 +40,12 @@ public class CoalBurnerScreenHandler extends ScreenHandler {
 
     public CoalBurnerScreenHandler(int syncId, PlayerInventory playerInventory, Inventory inventory) {
         super(ModScreenHandlers.COAL_BURNER, syncId);
-        checkSize(inventory, 2);
+        checkSize(inventory, 3);
         this.inventory = inventory;
-        this.addSlot(new Slot(inventory, 0, 26,  35));
-        this.addSlot(new Slot(inventory, 1, 80,  35));
-        this.addSlot(new Slot(inventory, 2, 134, 35));
+
+        this.fuelSlot    = this.addSlot(new Slot(inventory, 0, 26,  35));
+        this.crystalSlot = this.addSlot(new EnergyCrystalSlot(inventory, 1, 80,  35));
+        this.adapterSlot = this.addSlot(new Slot(inventory, 2, 134, 35));
 
         for(int j = 0; j < 3; ++j) {
             for(int k = 0; k < 9; ++k) {
@@ -59,9 +66,35 @@ public class CoalBurnerScreenHandler extends ScreenHandler {
             var slotStack = slot.getStack();
             stack = slotStack.copy();
 
-            // todo(@JustPyrrha, 20/06/22): Filter slots.
-
-            slot.onQuickTransfer(slotStack, stack);
+            if(index >= 0 && index <= 2) {
+                // burner -> *
+                if(!this.insertItem(slotStack, 3, 39, true)) {
+                    return ItemStack.EMPTY;
+                }
+                slot.onQuickTransfer(slotStack, stack);
+            } else if(
+                    this.fuelSlot.canInsert(slotStack) ||
+                    this.crystalSlot.canInsert(slotStack) ||
+                    this.adapterSlot.canInsert(slotStack)
+            ) {
+                // * -> burner
+                if(!this.insertItem(slotStack, 0, 3, false)) {
+                    return ItemStack.EMPTY;
+                }
+            } else if (index >= 2 && index < 30) {
+                // inventory -> hotbar
+                if(!this.insertItem(slotStack, 30, 39, false)) {
+                    return ItemStack.EMPTY;
+                }
+            } else if (index >= 30 && index < 39) {
+                // hotbar -> *
+                if(!this.insertItem(slotStack, 3, 39, false)) {
+                    return ItemStack.EMPTY;
+                }
+            } else if (!this.insertItem(slotStack, 3, 39, false)) {
+                // remaining slots
+                return ItemStack.EMPTY;
+            }
 
             if(slotStack.isEmpty()) {
                 slot.setStack(ItemStack.EMPTY);
@@ -69,9 +102,11 @@ public class CoalBurnerScreenHandler extends ScreenHandler {
                 slot.markDirty();
             }
 
-            if(stack.getCount() == slotStack.getCount()) {
+            if(slotStack.getCount() == stack.getCount()) {
                 return ItemStack.EMPTY;
             }
+
+            slot.onTakeItem(player, slotStack);
         }
 
         return stack;
