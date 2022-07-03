@@ -36,19 +36,19 @@ public class ModItems {
     public static final ItemGroup QTECH_GROUP = QuiltItemGroup.createWithIcon(new Identifier(ModConstants.MOD_ID, "group"), QTECH_ICON_ITEM::getDefaultStack);
 
     // energy crystals
-    public static final Item T1_ENERGY_CRYSTAL = register("t1_energy_crystal", new EnergyCrystalItem(0.05f, Rarity.COMMON));
-    public static final Item T2_ENERGY_CRYSTAL = register("t2_energy_crystal", new EnergyCrystalItem(0.10f, Rarity.COMMON));
-    public static final Item T3_ENERGY_CRYSTAL = register("t3_energy_crystal", new EnergyCrystalItem(0.25f, Rarity.UNCOMMON));
-    public static final Item T4_ENERGY_CRYSTAL = register("t4_energy_crystal", new EnergyCrystalItem(0.50f, Rarity.RARE));
-    public static final Item T5_ENERGY_CRYSTAL = register("t5_energy_crystal", new EnergyCrystalItem(1.00f, Rarity.EPIC));
-    public static final Item T6_ENERGY_CRYSTAL = register("t6_energy_crystal", new EnergyCrystalItem(0.25f, Rarity.UNCOMMON, true));
-    public static final Item T7_ENERGY_CRYSTAL = register("t7_energy_crystal", new EnergyCrystalItem(0.50f, Rarity.RARE, true));
-    public static final Item T8_ENERGY_CRYSTAL = register("t8_energy_crystal", new EnergyCrystalItem(1.00f, Rarity.EPIC,true));
-    public static final Item CRACKED_T1_ENERGY_CRYSTAL = register("cracked_t1_energy_crystal", new CrackedEnergyCrystalItem(Rarity.COMMON));
-    public static final Item CRACKED_T2_ENERGY_CRYSTAL = register("cracked_t2_energy_crystal", new CrackedEnergyCrystalItem(Rarity.COMMON));
-    public static final Item CRACKED_T3_ENERGY_CRYSTAL = register("cracked_t3_energy_crystal", new CrackedEnergyCrystalItem(Rarity.UNCOMMON));
-    public static final Item CRACKED_T4_ENERGY_CRYSTAL = register("cracked_t4_energy_crystal", new CrackedEnergyCrystalItem(Rarity.RARE));
-    public static final Item CRACKED_T5_ENERGY_CRYSTAL = register("cracked_t5_energy_crystal", new CrackedEnergyCrystalItem(Rarity.EPIC));
+    public static final Item COMMON_ENERGY_CRYSTAL                = register("common_energy_crystal",                new EnergyCrystalItem(0.05f, Rarity.COMMON));
+    public static final Item UNCOMMON_ENERGY_CRYSTAL              = register("uncommon_energy_crystal",              new EnergyCrystalItem(0.10f, Rarity.COMMON));
+    public static final Item RARE_ENERGY_CRYSTAL                  = register("rare_energy_crystal",                  new EnergyCrystalItem(0.25f, Rarity.UNCOMMON));
+    public static final Item EXQUISITE_ENERGY_CRYSTAL             = register("exquisite_energy_crystal",             new EnergyCrystalItem(0.50f, Rarity.RARE));
+    public static final Item MAJESTIC_ENERGY_CRYSTAL              = register("majestic_energy_crystal",              new EnergyCrystalItem(1.00f, Rarity.EPIC));
+    public static final Item UNCRACKABLE_RARE_ENERGY_CRYSTAL      = register("uncrackable_rare_energy_crystal",      new EnergyCrystalItem(0.25f, Rarity.UNCOMMON, true));
+    public static final Item UNCRACKABLE_EXQUISITE_ENERGY_CRYSTAL = register("uncrackable_exquisite_energy_crystal", new EnergyCrystalItem(0.50f, Rarity.RARE, true));
+    public static final Item UNCRACKABLE_MAJESTIC_ENERGY_CRYSTAL  = register("uncrackable_majestic_energy_crystal",  new EnergyCrystalItem(1.00f, Rarity.EPIC,true));
+    public static final Item CRACKED_COMMON_ENERGY_CRYSTAL        = register("cracked_common_energy_crystal",        new CrackedEnergyCrystalItem(Rarity.COMMON));
+    public static final Item CRACKED_UNCOMMON_ENERGY_CRYSTAL      = register("cracked_uncommon_energy_crystal",      new CrackedEnergyCrystalItem(Rarity.COMMON));
+    public static final Item CRACKED_RARE_ENERGY_CRYSTAL          = register("cracked_rare_energy_crystal",          new CrackedEnergyCrystalItem(Rarity.UNCOMMON));
+    public static final Item CRACKED_EXQUISITE_ENERGY_CRYSTAL     = register("cracked_exquisite_energy_crystal",     new CrackedEnergyCrystalItem(Rarity.RARE));
+    public static final Item CRACKED_MAJESTIC_ENERGY_CRYSTAL      = register("cracked_majestic_energy_crystal",      new CrackedEnergyCrystalItem(Rarity.EPIC));
 
     // Block Items
     public static final Item COAL_BURNER = register(ModBlocks.COAL_BURNER, QTECH_GROUP);

@@ -1,6 +1,0 @@
-{
-  "parent": "item/generated",
-  "textures": {
-    "layer0": "qtech:item/t4_energy_crystal"
-  }
-}

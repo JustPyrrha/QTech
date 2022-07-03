@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "qtech:item/cracked_t2_energy_crystal"
+    "layer0": "qtech:item/uncommon_energy_crystal"
   }
 }
