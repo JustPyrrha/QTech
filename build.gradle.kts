@@ -75,7 +75,7 @@ license {
     include("**/gay/pyrrha/qtech/**/*.java")
     properties {
         set("year", Year.now())
-        set("author", "JustPyrrha")
+        set("author", "Pyrrha \"JustPyrrha\" Wills")
     }
 }
 
