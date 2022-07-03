@@ -12,7 +12,7 @@ updates:
       - JustPyrrha
     ignore:
       - dependency-name: "com.mojang:minecraft"
-  - directory: /.github/workflows
+  - directory: /
     package-ecosystem: github-actions
     schedule:
       interval: daily
