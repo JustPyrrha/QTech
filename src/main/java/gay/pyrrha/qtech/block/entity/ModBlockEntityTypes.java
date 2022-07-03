@@ -40,14 +40,5 @@ public class ModBlockEntityTypes {
         return Registry.register(Registry.BLOCK_ENTITY_TYPE, new Identifier(ModConstants.MOD_ID, id), builder.build(null));
     }
 
-    public static <T extends BlockEntity> BlockEntityType<T> registerWithDataFixer(String id, BlockEntityType.Builder<T> builder) {
-        if(builder.blocks.size() == 0) {
-            QTech.modInstance.logger.warn("[QTech] No blocks registered for BlockEntityType {}, fix this dumbass.", id);
-        }
-        var identifier = new Identifier(ModConstants.MOD_ID, id);
-        var type = Util.getChoiceType(TypeReferences.BLOCK_ENTITY, identifier.toString());
-        return Registry.register(Registry.BLOCK_ENTITY_TYPE, identifier, builder.build(type));
-    }
-
     public static void init() {}
 }
