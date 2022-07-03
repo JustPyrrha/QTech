@@ -20,6 +20,10 @@ jobs:
           distribution: temurin
           java-version: 17
           cache: gradle
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v1
+        with:
+          languages: java
       - name: Validate Gradle Wrapper
         uses: gradle/wrapper-validation-action@v1
       - name: Setup Gradle
