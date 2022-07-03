@@ -1,5 +1,5 @@
 <p align="center" style="margin-bottom: 0px !important;">
-    <img src="src/main/resources/assets/qtech/icon.png" width="64" alt="QTech logo">
+    <img src="src/main/resources/assets/qtech/icon.png" width="128" alt="QTech logo">
 </p>
 <h1 align="center" style="margin-top: 0px;">QTech</h1>
 <p align="center"><strong>Modern tech with a mythical twist.</strong>
@@ -84,7 +84,7 @@ to develop our FOSS project.
 We urge you to read about the
 [Give up GitHub](https://GiveUpGitHub.org) campaign from
 [the Software Freedom Conservancy](https://sfconservancy.org) to understand
-some reasons why GitHub is not a good place to host FOSS projects.
+some of the reasons why GitHub is not a good place to host FOSS projects.
 
 Any use of this project's code by GitHub Copilot, past or present, is done
 without our permission.  We do not consent to GitHub's use of this project's
