@@ -60,6 +60,10 @@ java {
     withJavadocJar()
 }
 
+tasks.modrinth {
+    dependsOn(tasks.modrinthSyncBody)
+}
+
 modrinth {
     version = project.version
     versionType.set(
@@ -67,6 +71,10 @@ modrinth {
             else if (project.version.toString().contains("-beta")) "beta"
             else "release"
     )
+    syncBodyFrom.set(project.file("README.md").readText())
+    dependencies {
+        required.project("qvIfYCYJ") // qsl
+    }
 }
 
 license {
