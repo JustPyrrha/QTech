@@ -58,7 +58,7 @@ Community contributions are always welcome as long as you follow the guidelines 
 QTech is licensed under GNU General Public License v3, the full license text is available in the
 LICENSE file located in the root of this project along with a short header included with every source file.
 ```
-Copyright (C) 2022 JustPyrrha
+Copyright (C) 2022 Pyrrha "JustPyrrha" Wills
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
