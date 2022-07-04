@@ -35,6 +35,7 @@ public class QTech implements ModInitializer {
     public void onInitialize(ModContainer mod) {
         long startTime = System.currentTimeMillis();
         logger.info("[QTech] Initializing...");
+        logger.info("Trans Rights are Human Rights. \uD83C\uDFF3\uFE0F\u200D\u26A7\uFE0F");
         modInstance = this;
 
         ModItemTags.init();
